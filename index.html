@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Naman Nanda · AI Engineer &amp; Researcher</title>
+  <meta name="description" content="Naman Nanda — AI Engineer at MUFG building agentic GenAI systems, with research in LLM fine-tuning (ANU) and diffusion models (Samsung R&D)." />
+  <meta property="og:title" content="Naman Nanda · AI Engineer & Researcher" />
+  <meta property="og:description" content="Agentic GenAI systems, LLM fine-tuning and diffusion research." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#05060a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg stroke='%2322d3ee' stroke-width='3'%3E%3Cline x1='14' y1='16' x2='50' y2='32'/%3E%3Cline x1='14' y1='48' x2='50' y2='32'/%3E%3Cline x1='14' y1='16' x2='14' y2='48' stroke='%23a78bfa'/%3E%3C/g%3E%3Ccircle cx='14' cy='16' r='7' fill='%23a78bfa'/%3E%3Ccircle cx='14' cy='48' r='7' fill='%23a78bfa'/%3E%3Ccircle cx='50' cy='32' r='9' fill='%2322d3ee'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#top" class="logo"><span class="logo-dot"></span><span>naman<span class="accent">.ai</span></span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">about</a>
+      <a href="#tracks">research × eng</a>
+      <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
+      <a href="#skills">skills</a>
+      <a href="#chat" class="nav-cta">chat</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <!-- LAYER 0: HERO -->
+  <section class="hero" id="top">
+    <canvas id="neural" aria-hidden="true"></canvas>
+    <div class="hero-fallback" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="layer-tag mono">// layer_0 : input</p>
+      <h1 class="hero-name">Naman <span class="grad">Nanda</span></h1>
+      <p class="hero-role mono"><span class="prompt">&gt;</span> <span id="typed"></span><span class="caret">▌</span></p>
+      <p class="hero-sub">I build agentic GenAI systems in production and fine-tune models in research labs. Currently an <strong>AI Engineer at MUFG</strong>; previously researching LLMs at <strong>ANU</strong> and diffusion models at <strong>Samsung R&amp;D</strong>.</p>
+      <div class="hero-ctas">
+        <a href="#chat" class="btn btn-primary">Chat with naman-7b</a>
+        <a href="assets/NamanNanda_Resume.pdf" class="btn btn-ghost" download>Download CV ↓</a>
+      </div>
+      <div class="hero-socials mono">
+        <a href="https://github.com/nimo-codes" target="_blank" rel="noopener">github</a>
+        <a href="https://linkedin.com/in/namannanda3" target="_blank" rel="noopener">linkedin</a>
+        <a href="mailto:namannanda5657@gmail.com">email</a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-hint mono" aria-label="Scroll down">forward pass ↓</a>
+  </section>
+
+  <main>
+    <!-- LAYER 1: ABOUT -->
+    <section class="section" id="about">
+      <p class="layer-tag mono reveal">// layer_1 : embedding</p>
+      <h2 class="section-title reveal">About me</h2>
+      <div class="about-grid">
+        <div class="photo-wrap reveal">
+          <div class="photo-ring"></div>
+          <img src="assets/profile.jpg" alt="Naman Nanda" class="photo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'" />
+          <div class="photo-fallback" aria-hidden="true">NN</div>
+        </div>
+        <div class="about-text reveal">
+          <p>I'm an AI engineer who likes both sides of the stack: the <span class="hl-c">research</span> side, where you squeeze perplexity out of a fine-tuned LLM, and the <span class="hl-v">engineering</span> side, where that model has to run reliably inside a bank.</p>
+          <p>At <strong>MUFG</strong> I architect an AI-driven KYC platform with LangGraph, Azure and event-driven microservices. Before that I fine-tuned <strong>AstroLLaMA</strong> at the Australian National University and worked on <strong>Stable Diffusion &amp; DreamBooth</strong> at Samsung R&amp;D, where the research led to a publication.</p>
+          <p class="mono edu">B.Tech CSE (AI/ML) · SRM Institute of Science and Technology · 2026</p>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat reveal"><span class="stat-num" data-count="26" data-suffix="%">0</span><span class="stat-label">perplexity improvement<br/>AstroLLaMA</span></div>
+        <div class="stat reveal"><span class="stat-num" data-count="97" data-suffix="%+">0</span><span class="stat-label">test accuracy<br/>FireWatch CNN</span></div>
+        <div class="stat reveal"><span class="stat-num" data-count="42" data-suffix="K">0</span><span class="stat-label">satellite images<br/>trained on</span></div>
+        <div class="stat reveal"><span class="stat-num" data-count="9.25" data-decimals="2">0</span><span class="stat-label">CGPA<br/>B.Tech AI/ML</span></div>
+        <div class="stat reveal"><span class="stat-num" data-count="20" data-prefix="top ">0</span><span class="stat-label">nationally<br/>ANU FRT Program</span></div>
+      </div>
+    </section>
+
+    <!-- LAYER 2: TRACKS -->
+    <section class="section" id="tracks">
+      <p class="layer-tag mono reveal">// layer_2 : attention heads</p>
+      <h2 class="section-title reveal">Two heads, one model</h2>
+      <p class="section-lead reveal">Toggle between my research and engineering work.</p>
+      <div class="toggle reveal" role="tablist">
+        <button class="toggle-btn active" data-track="research" role="tab" aria-selected="true">◈ Research</button>
+        <button class="toggle-btn" data-track="engineering" role="tab" aria-selected="false">⬡ Engineering</button>
+        <span class="toggle-pill"></span>
+      </div>
+      <div class="track-panels">
+        <div class="track-panel active" data-panel="research">
+          <article class="card glow-v">
+            <p class="card-kicker mono">ANU · 2025</p>
+            <h3>Domain LLM fine-tuning</h3>
+            <p>Fine-tuned AstroLLaMA on scientific literature with QLoRA + PEFT. <strong>26% perplexity improvement</strong> on 385K tokens; served via Flask REST API and wrote up the full technical report.</p>
+            <div class="tags"><span>QLoRA</span><span>PEFT</span><span>TokenizerFast</span><span>LLaMA</span></div>
+          </article>
+          <article class="card glow-v">
+            <p class="card-kicker mono">Samsung R&amp;D · 2024</p>
+            <h3>Generative vision</h3>
+            <p>Fine-tuned Stable Diffusion and DreamBooth-based GANs/cGANs with LoRA on a 50-image product dataset under tight GPU-RAM limits. LLaMA-based prompt generation for text-to-image; earned a <strong>Certificate of Excellence</strong>.</p>
+            <div class="tags"><span>Stable Diffusion</span><span>DreamBooth</span><span>LoRA</span><span>cGAN</span></div>
+          </article>
+          <article class="card glow-v">
+            <p class="card-kicker mono">ICVGIP 2024</p>
+            <h3>ViDAS publication</h3>
+            <p>Co-authored <em>“ViDAS: Vision-based Danger Assessment and Scoring”</em>, published at the Indian Conference on Computer Vision, Graphics and Image Processing.</p>
+            <div class="tags"><span>Computer Vision</span><span>Publication</span></div>
+          </article>
+        </div>
+        <div class="track-panel" data-panel="engineering">
+          <article class="card glow-c">
+            <p class="card-kicker mono">MUFG · now</p>
+            <h3>AI-driven KYC platform</h3>
+            <p>Document ingestion, OCR, GenAI risk assessment and automated reporting, orchestrated with LangGraph and Azure Service Bus. Checkpointing and fault recovery on Cosmos DB + Blob Storage.</p>
+            <div class="tags"><span>LangGraph</span><span>Azure</span><span>Service Bus</span><span>Cosmos DB</span></div>
+          </article>
+          <article class="card glow-c">
+            <p class="card-kicker mono">Project</p>
+            <h3>FireWatch</h3>
+            <p>Distributed wildfire detection on NASA satellite imagery. Fine-tuned VGG-19 hits <strong>97%+ accuracy</strong> on 42K images, with real-time MLOps monitoring.</p>
+            <div class="tags"><span>VGG-19</span><span>TensorFlow</span><span>MLOps</span></div>
+          </article>
+          <article class="card glow-c">
+            <p class="card-kicker mono">CodeFest 2025 · winner</p>
+            <h3>Formulary Lens</h3>
+            <p>LLM-powered analytics for Medicare Part D formularies using Mistral-7B, few-shot prompting, Flask and GCP MySQL.</p>
+            <div class="tags"><span>Mistral-7B</span><span>Flask</span><span>GCP</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAYER 3: EXPERIENCE -->
+    <section class="section" id="experience">
+      <p class="layer-tag mono reveal">// layer_3 : hidden layers</p>
+      <h2 class="section-title reveal">Experience</h2>
+      <ol class="timeline">
+        <li class="tl-item reveal">
+          <div class="tl-node"><span>L3</span></div>
+          <div class="tl-body card">
+            <div class="tl-head"><h3>AI Engineer <span class="at">@ MUFG Global Services</span></h3><span class="mono muted small">Nov 2025 – Present · Bangalore</span></div>
+            <p class="mono small accent-c">Joined as AI Engineer Intern → converted to full-time, July 2026</p>
+            <ul>
+              <li>Architected an <strong>AI-driven KYC platform</strong>: document ingestion, OCR/extraction, evidence processing, GenAI-powered risk assessments, workflow orchestration and automated report generation on Python + Azure AI services.</li>
+              <li>Built <strong>asynchronous, event-driven orchestration</strong> with LangGraph, Azure Service Bus and worker microservices: parallel processing, checkpointing, fault recovery, resilient state on Cosmos DB &amp; Blob Storage.</li>
+              <li>Developed GenAI pipelines for <strong>screening-hit analysis, adverse-media assessment and entity resolution</strong> with structured LLM outputs, JSON-schema validation, evidence grounding, versioned prompts, audit trails and DOCX/XLSX reports.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="tl-item reveal">
+          <div class="tl-node"><span>L2</span></div>
+          <div class="tl-body card">
+            <div class="tl-head"><h3>AI/ML Research Intern <span class="at">@ Australian National University</span></h3><span class="mono muted small">Jun – Aug 2025 · Canberra</span></div>
+            <ul>
+              <li>Fine-tuned a domain-specific <strong>AstroLLaMA</strong> on scientific literature using QLoRA, TokenizerFast and PEFT: <strong>26% perplexity improvement</strong> on 385K tokens.</li>
+              <li>Deployed via a Flask REST API and authored a technical report on preprocessing, methodology and benchmarks.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="tl-item reveal">
+          <div class="tl-node"><span>L1</span></div>
+          <div class="tl-body card">
+            <div class="tl-head"><h3>ML Research Intern <span class="at">@ Samsung R&amp;D Institute</span></h3><span class="mono muted small">Mar – Jul 2024 · Chennai</span></div>
+            <ul>
+              <li>Fine-tuned <strong>Stable Diffusion</strong> and DreamBooth-based GANs/cGANs on a 50-image product dataset with LoRA, improving resolution under constrained GPU-RAM.</li>
+              <li>Integrated <strong>LLaMA-based prompt generation</strong> into a text-to-image pipeline and optimized img-to-img and Refiner training. The research led to a publication and a Certificate of Excellence.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- LAYER 4: PROJECTS -->
+    <section class="section" id="projects">
+      <p class="layer-tag mono reveal">// layer_4 : inference</p>
+      <h2 class="section-title reveal">Projects</h2>
+      <div class="projects">
+        <article class="project card reveal">
+          <div class="project-visual fire" aria-hidden="true"><div class="scanline"></div><span class="mono">sat_img_0417.tif → p(fire)=0.97</span></div>
+          <div class="project-body">
+            <h3>FireWatch</h3>
+            <p>Distributed wildfire detection system using NASA satellite imagery and a fine-tuned VGG-19 CNN. Deployed with real-time MLOps workflows for scalable live monitoring and inference.</p>
+            <div class="metrics mono"><span><b>97%+</b> accuracy</span><span><b>42K</b> images</span></div>
+            <div class="tags"><span>VGG-19</span><span>CNN</span><span>NASA imagery</span><span>MLOps</span></div>
+            <a href="https://firewatch-hosted.vercel.app" target="_blank" rel="noopener" class="btn btn-small">Live demo ↗</a>
+          </div>
+        </article>
+        <article class="project card reveal">
+          <div class="project-visual formulary" aria-hidden="true"><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="mono">mistral-7b → coverage_insight</span></div>
+          <div class="project-body">
+            <h3>Formulary Lens <span class="badge mono">CodeFest '25 winner</span></h3>
+            <p>AI analytics platform generating real-time Medicare Part D formulary insights with Mistral-7B and few-shot prompting, backed by an LLM-powered NLP pipeline on GCP MySQL for predictive market-access insights.</p>
+            <div class="metrics mono"><span><b>Mistral-7B</b></span><span><b>real-time</b> insights</span></div>
+            <div class="tags"><span>LLM</span><span>Few-shot</span><span>Flask</span><span>GCP MySQL</span></div>
+            <a href="https://v0-ai-us-formulary-ey5461.vercel.app" target="_blank" rel="noopener" class="btn btn-small">Live demo ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- LAYER 5: SKILLS -->
+    <section class="section" id="skills">
+      <p class="layer-tag mono reveal">// layer_5 : weights</p>
+      <h2 class="section-title reveal">Skills</h2>
+      <p class="section-lead reveal">Hover a cell to see its attention weight.</p>
+      <div class="skills" id="skillsGrid"></div>
+    </section>
+
+    <!-- LAYER 6: CHAT -->
+    <section class="section" id="chat">
+      <p class="layer-tag mono reveal">// layer_6 : decoder</p>
+      <h2 class="section-title reveal">Ask naman-7b</h2>
+      <p class="section-lead reveal">A small model trained only on me. Pick a prompt or type a question.</p>
+      <div class="terminal reveal">
+        <div class="term-bar">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="term-title mono">naman-7b · inference</span>
+          <span class="term-stats mono" id="tokStats">idle</span>
+        </div>
+        <div class="term-body mono" id="chatLog" aria-live="polite"></div>
+        <div class="chips" id="chips"></div>
+        <form class="term-input" id="chatForm" autocomplete="off">
+          <span class="prompt mono">&gt;</span>
+          <input id="chatInput" class="mono" type="text" placeholder="ask about research, MUFG, projects, skills…" aria-label="Ask naman-7b a question" maxlength="200" />
+          <button type="submit" class="mono">send ↵</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- LAYER 7: AWARDS -->
+    <section class="section" id="awards">
+      <p class="layer-tag mono reveal">// layer_7 : evaluation</p>
+      <h2 class="section-title reveal">Awards &amp; publication</h2>
+      <div class="awards">
+        <div class="award card reveal"><span class="award-icon">✦</span><h3>Future Research Talent, ANU</h3><p>Selected as one of the top 20 students nationally for the fully funded FRT Program in Australia.</p></div>
+        <div class="award card reveal"><span class="award-icon">◆</span><h3>Winner, CodeFest 2025</h3><p>Built an AI platform for Medicare Part D formulary automation.</p></div>
+        <div class="award card reveal"><span class="award-icon">❖</span><h3>ICVGIP 2024</h3><p>Co-authored “ViDAS: Vision-based Danger Assessment and Scoring”.</p></div>
+      </div>
+    </section>
+
+    <!-- OUTPUT LAYER: CONTACT -->
+    <section class="section contact" id="contact">
+      <p class="layer-tag mono reveal">// output_layer : softmax</p>
+      <h2 class="section-title reveal">Let's build something <span class="grad">intelligent</span>.</h2>
+      <p class="section-lead reveal">Open to AI engineering and research collaborations.</p>
+      <div class="contact-grid reveal">
+        <a class="contact-item card" href="mailto:namannanda5657@gmail.com"><span class="mono muted small">email</span><span>namannanda5657@gmail.com</span></a>
+        <a class="contact-item card" href="tel:+918115700008"><span class="mono muted small">phone</span><span>+91 81157 00008</span></a>
+        <a class="contact-item card" href="https://linkedin.com/in/namannanda3" target="_blank" rel="noopener"><span class="mono muted small">linkedin</span><span>in/namannanda3</span></a>
+        <a class="contact-item card" href="https://github.com/nimo-codes" target="_blank" rel="noopener"><span class="mono muted small">github</span><span>nimo-codes</span></a>
+      </div>
+      <a href="assets/NamanNanda_Resume.pdf" class="btn btn-primary reveal" download>Download full CV ↓</a>
+    </section>
+  </main>
+
+  <footer class="footer mono">
+    <span>model: naman-v2026 · params: caffeine-tuned</span>
+    <span>© <span id="year"></span> Naman Nanda</span>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/neural.js"></script>
+  <script src="js/chat.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
