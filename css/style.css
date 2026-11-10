@@ -77,7 +77,7 @@ em { font-family: var(--serif); font-style: italic; font-size: 1.12em; color: va
 .btn-small { padding: 8px 14px; font-size: 0.78rem; }
 
 /* ---------- hero ---------- */
-.hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; padding: 110px var(--pad) clamp(28px, 5vh, 56px); max-width: calc(var(--maxw) + 2 * var(--pad)); margin: 0 auto; }
+.hero { display: flex; flex-direction: column; padding: clamp(96px, 13vh, 132px) var(--pad) 0; max-width: calc(var(--maxw) + 2 * var(--pad)); margin: 0 auto; }
 .hero-meta { display: flex; justify-content: space-between; gap: 16px; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--dim); margin-bottom: clamp(12px, 3vh, 28px); }
 .hero-meta span { white-space: nowrap; }
 .hero-readout { display: none; color: var(--signal); }
@@ -110,6 +110,7 @@ input[type="range"]::-moz-range-thumb { width: 12px; height: 18px; background: v
 
 /* ---------- numbers + about ---------- */
 .band, .work, .contact { max-width: calc(var(--maxw) + 2 * var(--pad)); margin: 0 auto; padding: clamp(64px, 10vw, 130px) var(--pad) 0; }
+.band { padding-top: clamp(36px, 5vh, 56px); }
 .stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .stat { padding: 26px 18px 24px 0; }
 .stat + .stat { padding-left: 18px; border-left: 1px solid var(--line); }
@@ -312,7 +313,7 @@ input[type="range"]::-moz-range-thumb { width: 12px; height: 18px; background: v
   .nav-links { position: fixed; inset: 0; background: var(--ink); flex-direction: column; justify-content: center; gap: 30px; font-size: 1.1rem; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
   .nav-links.open { opacity: 1; pointer-events: auto; }
   .nav-toggle, .logo { position: relative; z-index: 2; }
-  .hero { padding-top: 96px; }
+  .hero { padding-top: 88px; }
   .hero-meta { font-size: 0.62rem; letter-spacing: 0.06em; }
   .hero-grid { grid-template-columns: minmax(0, 1fr); align-items: start; }
   .about, .work-head, .skill-row { grid-template-columns: minmax(0, 1fr); gap: 12px; }
