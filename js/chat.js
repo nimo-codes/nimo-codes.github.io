@@ -1,11 +1,16 @@
-// naman-7b: a scripted, resume-grounded "model" that streams answers token by token.
-// Runs fully in the browser: no API key, no backend.
+// naman-7b. Two engines, both fully in the browser (no API key, no backend):
+//  1. scripted (default): keyword routing over fixed, resume-grounded answers.
+//  2. real LLM (opt-in): a small open model run on the visitor's GPU via WebLLM,
+//     grounded on the same answers. See js/llm.js.
 (function () {
   const log = document.getElementById("chatLog");
   const form = document.getElementById("chatForm");
   const input = document.getElementById("chatInput");
   const chipsEl = document.getElementById("chips");
   const stats = document.getElementById("tokStats");
+  const loadBtn = document.getElementById("loadLLM");
+  const engineNote = document.getElementById("engineNote");
+  const progress = document.getElementById("llmProgress");
   if (!log || !form) return;
 
   // Each intent: keywords to match, and the answer. [text](url) becomes a link.
@@ -53,7 +58,7 @@
     {
       id: "model", chip: null,
       keys: ["real ai", "are you real", "are you an ai", "a real", "bot", "gpt", "how do you work", "chatgpt", "claude"],
-      a: "Full transparency: I'm a tiny scripted model that runs entirely in your browser. No API, no GPU, just keyword routing over Naman's resume and some token streaming for effect. The real Naman builds the serious ones. 😉",
+      a: "Full transparency: by default I'm a tiny scripted model, just keyword routing over Naman's resume with token streaming for effect. Press \"Load real weights\" above and I become an actual LLM running on your GPU through WebGPU, with no server involved. The real Naman builds the serious ones. 😉",
     },
   ];
 
@@ -123,17 +128,81 @@
     if (reduce) { target.innerHTML = linkify(full); done(); } else step();
   }
 
+  // ---- real LLM (opt-in) ----
+  let llm = null, loading = false;
+  const history = [];
+  function scripted(target, q) {
+    const hit = route(q);
+    if (hit) used.add(hit.id);
+    setTimeout(() => {
+      stream(target, hit ? hit.a : FALLBACK, () => { setBusy(false); renderChips(); });
+    }, reduce ? 0 : 500 + Math.random() * 400);
+  }
+
+  async function generate(target, q) {
+    let text = "", n = 0;
+    const start = performance.now();
+    try {
+      for await (const piece of llm.chat(history.slice(-4), q)) {
+        text += piece;
+        n++;
+        target.textContent = text;
+        log.scrollTop = log.scrollHeight;
+        stats.textContent = `${n} tokens · ${(n / Math.max((performance.now() - start) / 1000, 0.01)).toFixed(0)} tok/s · on your GPU`;
+      }
+      if (!text.trim()) throw new Error("empty response");
+      history.push({ role: "user", content: q }, { role: "assistant", content: text });
+      stats.textContent = `done · ${n} tokens · generated on your device`;
+      setBusy(false);
+      renderChips();
+    } catch (err) {
+      console.error(err);
+      stats.textContent = "model error · falling back to script";
+      scripted(target, q);
+    }
+  }
+
+  const GREETING = /^\s*(hi|hello|hey|yo|hola|namaste)\b[\s!.]*$/i;
+
   function ask(q) {
     if (busy || !q.trim()) return;
     setBusy(true);
     addMsg("user", "you ›", esc(q));
     const think = addMsg("bot", "naman-7b ›", '<span class="thinking">thinking</span>');
     stats.textContent = "running forward pass…";
-    const hit = route(q);
-    if (hit) used.add(hit.id);
-    setTimeout(() => {
-      stream(think, hit ? hit.a : FALLBACK, () => { setBusy(false); renderChips(); });
-    }, reduce ? 0 : 500 + Math.random() * 400);
+    if (llm && !GREETING.test(q)) generate(think, q); else scripted(think, q);
+  }
+
+  if (loadBtn) {
+    loadBtn.textContent = "Load real weights · ~900 MB";
+    loadBtn.addEventListener("click", async () => {
+      if (loading || llm) return;
+      loading = true;
+      loadBtn.disabled = true;
+      try {
+        const mod = await import("./llm.js");
+        if (!mod.supported()) throw new Error("no-webgpu");
+        progress.hidden = false;
+        engineNote.textContent = "fetching runtime…";
+        await mod.load((p, text) => {
+          progress.style.setProperty("--p", p);
+          engineNote.textContent = p < 1 ? `downloading weights · ${Math.round(p * 100)}% · you can keep chatting meanwhile` : "compiling shaders…";
+        });
+        llm = mod;
+        progress.hidden = true;
+        loadBtn.hidden = true;
+        engineNote.textContent = `engine: ${mod.label()} · running on your GPU via WebGPU · nothing leaves this tab`;
+        addMsg("sys", "", "real weights loaded. answers are now generated on your device from Naman's resume. it is a small 1.5B-parameter model, so check anything important against the page.");
+      } catch (err) {
+        if (err.message !== "no-webgpu") console.error(err);
+        progress.hidden = true;
+        loadBtn.disabled = false;
+        engineNote.textContent = err.message === "no-webgpu"
+          ? "this browser has no WebGPU, so the real model can't run here. try a recent desktop Chrome or Edge. the scripted engine still works."
+          : "couldn't load the model (network or GPU memory). still on the scripted engine.";
+      }
+      loading = false;
+    });
   }
 
   function renderChips() {
@@ -161,7 +230,7 @@
     ask(q);
   });
 
-  addMsg("sys", "", "naman-7b v2026.11 loaded · context: resume.pdf · temperature 0.7");
-  addMsg("bot", "naman-7b ›", "Hey 👋 I'm a small model fine-tuned on Naman. Ask me anything about his research, engineering work or projects.");
+  addMsg("sys", "", "naman-7b loaded · engine: scripted · context: resume.pdf");
+  addMsg("bot", "naman-7b ›", "Hey 👋 I answer questions about Naman: his research, engineering work and projects. Pick a prompt or type your own.");
   renderChips();
 })();
