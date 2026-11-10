@@ -23,6 +23,22 @@ function setMenu(open) {
 toggle.addEventListener("click", () => setMenu(!links.classList.contains("open")));
 links.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
 
+// Recruiter summary: a one-screen overlay. /#recruiter opens it directly, so the link can be shared.
+const rec = document.getElementById("recruiter");
+if (rec && rec.showModal) {
+  const openRec = () => { if (!rec.open) rec.showModal(); rec.scrollTop = 0; };
+  document.querySelectorAll("[data-recruiter]").forEach((b) => b.addEventListener("click", (e) => {
+    e.preventDefault();
+    setMenu(false);
+    history.replaceState(null, "", "#recruiter");
+    openRec();
+  }));
+  rec.querySelectorAll("[data-rec-close]").forEach((b) => b.addEventListener("click", () => rec.close()));
+  rec.addEventListener("click", (e) => { if (e.target === rec) rec.close(); });
+  rec.addEventListener("close", () => { if (location.hash === "#recruiter") history.replaceState(null, "", location.pathname + location.search); });
+  if (location.hash === "#recruiter") openRec();
+}
+
 // Count-up numbers
 function countUp(el) {
   const end = parseFloat(el.dataset.count);

@@ -297,6 +297,41 @@ input[type="range"]::-moz-range-thumb { width: 12px; height: 18px; background: v
 @keyframes blink { 50% { opacity: 0; } }
 @keyframes hot { 50% { background: rgba(255, 91, 46, 0.28); } }
 
+/* ---------- recruiter summary ---------- */
+.btn-signal { background: var(--signal); color: var(--ink); }
+.btn-signal:hover { background: var(--bone); }
+.nav-links .nav-rec { color: var(--ink); background: var(--signal); padding: 5px 12px; border-radius: 999px; }
+.nav-links .nav-rec:hover { color: var(--ink); background: var(--bone); }
+.rec { margin: auto; width: min(880px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); background: var(--ink-2); color: var(--bone); border: 1px solid var(--line-2); border-radius: 12px; padding: 0; overflow-y: auto; }
+.rec:not([open]) { display: none; }
+.rec::backdrop { background: rgba(13, 12, 10, 0.86); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.rec-inner { padding: clamp(20px, 3vw, 34px); display: grid; gap: 14px; }
+.rec-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.rec-head .eyebrow { color: var(--signal); }
+.rec-close { font-size: 0.74rem; color: var(--dim); border: 1px solid var(--line-2); border-radius: 999px; padding: 5px 12px; white-space: nowrap; }
+.rec-close:hover { color: var(--bone); border-color: var(--bone); }
+.rec h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 6vw, 4.2rem); line-height: 0.95; letter-spacing: -0.01em; }
+.rec-role { font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--soft); max-width: 62ch; }
+.rec-jobs { border-top: 1px solid var(--line); }
+.rec-jobs li { display: grid; grid-template-columns: 124px minmax(0, 1fr); gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--line); }
+.rec-jobs span { font-size: 0.72rem; padding-top: 3px; }
+.rec-jobs h3 { font-size: 1rem; font-weight: 600; line-height: 1.35; }
+.rec-jobs p { font-size: 0.92rem; color: var(--soft); line-height: 1.5; margin-top: 2px; }
+.rec-nums { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.rec-nums b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(1.9rem, 4vw, 2.7rem); line-height: 1; color: var(--signal); white-space: nowrap; }
+.rec-nums span { display: block; margin-top: 6px; font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--dim); line-height: 1.4; }
+.rec-line { font-size: 0.9rem; color: var(--soft); display: grid; grid-template-columns: 124px minmax(0, 1fr); gap: 16px; }
+.rec-line span { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; padding-top: 2px; }
+.rec-actions { display: flex; flex-wrap: wrap; gap: 8px; padding: 2px 0 6px; }
+.rec-actions .btn { padding: 11px 18px; font-size: 0.88rem; }
+.rec-more { justify-self: start; font-size: 0.76rem; color: var(--dim); border-bottom: 1px solid var(--line-2); padding-bottom: 2px; }
+.rec-more:hover { color: var(--signal); border-color: var(--signal); }
+@media (max-width: 720px) {
+  .nav-links .nav-rec { padding: 9px 20px; }
+  .rec-jobs li, .rec-line { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .rec-nums { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; }
+}
+
 /* ---------- responsive ---------- */
 @media (max-width: 960px) {
   .work-grid, .work-grid.flip { grid-template-columns: minmax(0, 1fr); }

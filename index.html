@@ -29,6 +29,7 @@
       <a href="#chat">chat</a>
       <a href="#contact">contact</a>
       <a href="assets/NamanNanda_Resume.pdf" class="nav-cv" download>CV ↓</a>
+      <a href="#recruiter" class="nav-rec" data-recruiter>for recruiters</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
   </header>
@@ -51,6 +52,7 @@
         <div class="hero-ctas">
           <a href="#chat" class="btn btn-solid">Chat with naman-7b</a>
           <a href="assets/NamanNanda_Resume.pdf" class="btn btn-line" download>Download CV ↓</a>
+          <a href="#recruiter" class="btn btn-signal" data-recruiter>Recruiter? 30-second version</a>
         </div>
         <div class="hero-socials mono">
           <a href="https://github.com/nimo-codes" target="_blank" rel="noopener">github</a>
@@ -265,6 +267,45 @@
       <a href="assets/NamanNanda_Resume.pdf" class="btn btn-solid reveal" download>Download full CV ↓</a>
     </section>
   </main>
+
+  <!-- RECRUITER SUMMARY -->
+  <dialog class="rec" id="recruiter" aria-labelledby="recTitle">
+    <div class="rec-inner">
+      <header class="rec-head">
+        <p class="eyebrow mono">30-second version · for recruiters</p>
+        <button type="button" class="rec-close mono" data-rec-close aria-label="Close summary">close ✕</button>
+      </header>
+      <h2 id="recTitle">Naman Nanda</h2>
+      <p class="rec-role">AI Engineer at <strong>MUFG Global Services</strong>, Bangalore. Builds agentic GenAI systems in production, with research experience in LLM fine-tuning and diffusion models.</p>
+
+      <div class="rec-actions">
+        <a href="assets/NamanNanda_Resume.pdf" class="btn btn-solid" download>Download CV ↓</a>
+        <a href="mailto:namannanda5657@gmail.com" class="btn btn-line">namannanda5657@gmail.com</a>
+        <a href="tel:+918115700008" class="btn btn-line">+91 81157 00008</a>
+        <a href="https://linkedin.com/in/namannanda3" target="_blank" rel="noopener" class="btn btn-line">LinkedIn ↗</a>
+        <a href="https://github.com/nimo-codes" target="_blank" rel="noopener" class="btn btn-line">GitHub ↗</a>
+      </div>
+
+      <ol class="rec-jobs">
+        <li><span class="mono dim">Nov 2025 – now</span><div><h3>AI Engineer · MUFG Global Services</h3><p>Architected an AI-driven KYC platform on LangGraph and Azure. Joined as an intern, converted to full-time in July 2026.</p></div></li>
+        <li><span class="mono dim">Jun – Aug 2025</span><div><h3>AI/ML Research Intern · Australian National University</h3><p>Fine-tuned AstroLLaMA with QLoRA for a 26% perplexity improvement. One of the top 20 students nationally selected for the funded FRT program.</p></div></li>
+        <li><span class="mono dim">Mar – Jul 2024</span><div><h3>ML Research Intern · Samsung R&amp;D Institute</h3><p>Fine-tuned Stable Diffusion and DreamBooth with LoRA. Led to a publication (ICVGIP 2024) and a Certificate of Excellence.</p></div></li>
+      </ol>
+
+      <div class="rec-nums">
+        <div><b>26%</b><span class="mono">perplexity improvement</span></div>
+        <div><b>97%+</b><span class="mono">accuracy, FireWatch</span></div>
+        <div><b>9.25</b><span class="mono">CGPA, B.Tech AI/ML</span></div>
+        <div><b>top 20</b><span class="mono">nationally, ANU FRT</span></div>
+      </div>
+
+      <p class="rec-line"><span class="mono dim">stack</span> Python · PyTorch · Hugging Face · LLMs · LoRA/QLoRA · RAG · LangGraph · LangChain · Azure · GCP · Flask · SQL</p>
+      <p class="rec-line"><span class="mono dim">education</span> B.Tech CSE (AI/ML) · SRM Institute of Science and Technology · 2026</p>
+      <p class="rec-line"><span class="mono dim">also</span> Winner, CodeFest 2025 (Formulary Lens)</p>
+
+      <button type="button" class="rec-more mono" data-rec-close>or see the full site with live demos →</button>
+    </div>
+  </dialog>
 
   <footer class="footer mono">
     <span>The demos on this page are small simulations written for it, not the production systems.</span>
